@@ -16,8 +16,8 @@ RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/${BuildTools_version}/a
 
 ARG SpigotMC_version=1.14.3
 RUN java -jar BuildTools.jar --rev ${SpigotMC_version}
-
+RUN ln -vs "${PWD}/spigot-${SpigotMC_version}.jar" /usr/local/bin/spigot
 
 #TODO: VOLUMEs
 
-ENTRYPOINT java -server -jar /opt/SpigotMC/spigot-${SpigotMC_version}.jar
+ENTRYPOINT java -server -jar /usr/local/bin/spigot
