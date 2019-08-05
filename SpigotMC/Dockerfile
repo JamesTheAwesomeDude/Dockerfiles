@@ -13,7 +13,7 @@ ARG user=mc
 WORKDIR /opt/SpigotMC
 RUN chown -v "${user}" "${PWD}"
 
-ARG BuildTools_version=latest
+ARG BuildTools_version=lastSuccessfulBuild
 RUN wget "https://hub.spigotmc.org/jenkins/job/BuildTools/${BuildTools_version}/artifact/target/BuildTools.jar"
 
 #USER "${user}"
