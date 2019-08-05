@@ -26,6 +26,7 @@ RUN ln -vs "${PWD}/spigot-${SpigotMC_version}.jar" /usr/local/bin/spigot
 
 VOLUME /var/mc
 WORKDIR /var/mc
-USER "${user}" #TODO: fix the build failure resulting from running this earlier
+USER "${user}"
+#TODO: fix the build failure resulting from running this earlier
 ENV HOME="${PWD}"
 CMD ["java", "-server", "-jar", "/usr/local/bin/spigot"]
